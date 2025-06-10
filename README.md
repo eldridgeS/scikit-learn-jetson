@@ -19,7 +19,7 @@ Initialize Conda:
 
 Bash
 
-~/miniconda3/bin/conda init
+    ~/miniconda3/bin/conda init
 You might need to close and reopen your terminal or run source ~/.bashrc (or source ~/.zshrc if you're using zsh) for the changes to take effect. You should see (base) prepended to your command prompt, indicating the base Conda environment is active.
 
 Create a New Conda Environment for Scikit-learn:
@@ -27,14 +27,14 @@ It's good practice to create a separate environment for your project to manage d
 
 Bash
 
-conda create -n sklearn_env python=3.9  # You can choose a Python version suitable for the scikit-learn tutorial.
+    conda create -n sklearn_env python=3.9  # You can choose a Python version suitable for the scikit-learn tutorial.
 Confirm with y when prompted.
 
 Activate Your New Environment:
 
 Bash
 
-conda activate sklearn_env
+    conda activate sklearn_env
 Your prompt should now show (sklearn_env).
 
 Install Jupyter Notebook:
@@ -42,24 +42,24 @@ Install Jupyter Notebook within your activated sklearn_env.
 
 Bash
 
-conda install jupyter notebook
+    conda install jupyter notebook
 Alternatively, you can use pip: pip install jupyter notebook (if conda install has issues).
 Also, install ipykernel so your Conda environment can be recognized by Jupyter:
 
 Bash
 
-pip install ipykernel
-python -m ipykernel install --user --name=sklearn_env --display-name "Python (scikit-learn_env)"
+    pip install ipykernel
+    python -m ipykernel install --user --name=sklearn_env --display-name "Python (scikit-learn_env)"
 Install Scikit-learn and other necessary libraries:
 
 Bash
 
-conda install scikit-learn numpy pandas matplotlib scipy
+    conda install scikit-learn numpy pandas matplotlib scipy
 If you encounter issues with conda install for scikit-learn on the Jetson, you might need to try pip install or check for specific aarch64 wheels (pre-compiled packages) if available. Sometimes, due to the ARM architecture, direct conda install might lead to compilation issues. If conda install fails, try:
 
 Bash
 
-pip install scikit-learn numpy pandas matplotlib scipy
+    pip install scikit-learn numpy pandas matplotlib scipy
 Note: For some specialized libraries (like PyTorch or TensorFlow) on Jetson, you often need to install NVIDIA-provided pre-built .whl files rather than using pip or conda directly. However, scikit-learn usually has better cross-platform support.
 
 Launch Jupyter Notebook:
@@ -67,8 +67,8 @@ Navigate to the directory where you plan to store your tutorial notebooks.
 
 Bash
 
-cd ~/
-jupyter notebook
+    cd ~/
+    jupyter notebook
 This will start the Jupyter server and open a new tab in your web browser (if you have a graphical desktop environment and browser installed on your Jetson). If not, it will print a URL with a token in the terminal. Copy and paste this URL into a web browser on a different computer on the same network to access your Jupyter Notebook remotely (replace localhost with your Jetson's IP address).
 
 
@@ -83,6 +83,6 @@ Launch Jupyter Notebook: jupyter notebook
 Work on your scikit-learn tutorial.
 Save your notebooks.
 In the terminal (after stopping Jupyter or in a new terminal):
-git add .
-git commit -m "Meaningful commit message"
-git push origin main
+    git add .
+    git commit -m "Meaningful commit message"
+    git push origin main
